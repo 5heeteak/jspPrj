@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* 첫번째방
+-height/ min-height
+-reset : body(margin)
+두번째방
+-height/min-height : 100%,inherit
+-박스를 정렬: width 고정 ->margin left/right/ center
+- margin/ padding/ border
+
+세번째방
+-floating.clear-fix */
+/* ------reset---------------------------------------------------------------------------------------------- */
+body{
+	margin: 0px;
+}
+h1{
+	margin: 0px;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	display: block;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+/* -------abstract stlye------------------------------------------------------------------------------ */
+
+/* -------component------------------------------------------------------------------------------- */
+.btn{
+	
+}
+
+.btn-default{
+	background: #759d2a;
+	min-width: 71px;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+	padding: 3px 8px;
+	/* 모서리 둥글게 */
+	border-radius: 4px;
+}
+	
+.btn-warning{
+	
+}
+
+.btn-cancel{
+	
+}
+	
+/* ------------------------------------------------------------------------------------------------------ */
+		/* 공통분모 집중화 */
+.hor-menu{
+	display: inline-block;
+}
+	.hor-menu >h1{
+		display: none;
+	}
+
+		.hor-menu> ul{
+			overflow: auto;		
+		}
+	
+		.hor-menu > ul > li{
+			float: left;
+		}
+		
+			.hor-menu.first-pad-none > ul > li:first-child{
+			/* .클래스명.클래스명은 and연산자 역할 */
+			padding-left: 0px;
+			background: none;
+		}
+
+	/* -------header--------------------------------------------------------------------------------------------- */
+#header{
+	height: 70px;
+}	
+		.main-menu{
+			color: #000000;
+			font-family: "맑은고딕", "고딕", sans-serif;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		
+				.main-menu > ul > li{
+					padding-left: 24px;
+					background: url("../images/bg-main-menu-vsp.png")no-repeat 13px center;
+				}
+	/* --------------------------------------------------------------------------------------------------------- */		
+	.member-menu{
+			font-family: "맑은고딕", "고딕", sans-serif;
+			font-size: 10px;
+			font-weight: bold;
+		}
+		
+				.member-menu > ul > li{
+					padding-left: 9px;
+					background: url("../images/bg-member-menu-sp.png")no-repeat 4px center;
+				}
+
+/* -----visual------------------------------------------------------------------------------------------------ */
+#visual{
+	height: 171px;
+	/* background: #313131  url("../images/bg-visual.png") no-repeat center; */
+	border-top: 3px solid #8CBA34; 
+}
+#body{
+	min-height: 300px;
+	border-top: 5px solid #8CBA34;
+	margin-top: 1px;
+}
+#footer{
+	height: 100px;
+	background: #313131;
+	border-top: 3px solid #8CBA34;
+	
+}
+.root-container{
+	height: 100%;
+	min-height: inherit;
+	/* height: inherit; */
+	width:  960px;
+	
+	/* 투명도 */
+	/* opacity: 0.5; */
+	/*가운데 정렬방식 */
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#body > .root-container{
+	display: flex;
+	flex-direction: row;
+}
+
+/*  aside main 스타일 설정 */
+#aside{
+	min-height: inherit;
+	/* 너비고정(flex 사용시) */
+	min-width: 205px;
+
+	/* float: left; */
+	background: url("../images/bg-aside-title.png") no-repeat left top;
+	padding-top: 20px;
+}
+
+#main{
+	min-height: inherit;
+	min-width: 755px;
+	/* 여백 설정 */
+	padding-left: 35px;
+	padding-top: 45px;
+	padding-bottom: 40px;
+	/* padding: 45px, 0px, 0px, 35px; */
+	box-sizing: border-box;
+
+}
+
+
+
+#body .root-container{
+	background: url("../images/bg-body.png") repeat-y center;
+}
+
+/* .clear-fix{ } */
+
+/* ::after <- 가상의 영역 생성?
+			기본형식 */
+.clear-fix::after{
+	content: "clear-fix";
+	display: block;
+	clear: both;
+	height: 0px;
+	border: 1px solid red;
+	overflow: hidden;
+}
